@@ -189,20 +189,25 @@ StaticServlet.prototype.sendError_ = function (req, res, error) {
 };
 
 StaticServlet.prototype.sendMissing_ = function (req, res, path) {
-    path = path.substring(1);
+    var self = this;
+    var path = './404.html'
+
+    var file = fs.createReadStream(path);
     res.writeHead(404, {
-        'Content-Type':'text/html'
+        'Content-Type':StaticServlet.
+            MimeMap[path.split('.').pop()] || 'text/plain'
     });
-    res.write('<!doctype html>\n');
-    res.write('<title>404 Not Found</title>\n');
-    res.write('<h1>Not Found</h1>');
-    res.write(
-        '<p>The requested URL ' +
-            escapeHtml(path) +
-            ' was not found on this server.</p>'
-    );
-    res.end();
-    console.log('404 Not Found: ' + path);
+    if (req.method === 'HEAD') {
+        res.end();
+    } else {
+        file.on('data', res.write.bind(res));
+        file.on('close', function () {
+            res.end();
+        });
+        file.on('error', function (error) {
+            self.sendError_(req, res, error);
+        });
+    }
 };
 
 StaticServlet.prototype.sendForbidden_ = function (req, res, path) {
