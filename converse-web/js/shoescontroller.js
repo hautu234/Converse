@@ -1,5 +1,20 @@
-var app = angular.module('converseBMT', ['ngRoute']);
-app.controller('shoesController', ['$scope','$routeParams', function($scope,$routeParams) {
+var app = angular.module('converseBMT', ['ngRoute'])
+
+.config(function ($routeProvider, $locationProvider) {
+    //configure the routing rules here
+    $routeProvider.when('/shoesdetailed.html/view', {
+        controller: 'shoesController'
+    });
+
+    //routing DOESN'T work without html5Mode
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });
+})
+
+
+.controller('shoesController', ['$scope','$routeParams', '$location', '$http', function($scope, $routeParams, $location, $http) {
     var shoes = [
         {
             "name": "Nike Air Max",
@@ -111,15 +126,15 @@ app.controller('shoesController', ['$scope','$routeParams', function($scope,$rou
         temp.push(shoes[i]);
     }
 
-    $scope.$on('$routeChangeSuccess', function() {
-        // $routeParams will be populated here if
-        // this controller is used outside ng-view
-        console.log(JSON.stringify($routeParams));
+    console.log("params" + JSON.stringify($location.search().test));
 
-
+    $http.get('/data/nike.json').then(function(response) {
+        console.log(response);
+        $scope.shoesdata = response;
     });
 
-    console.log("params" + $routeParams.test);
-    console.log(JSON.stringify($routeParams));
+    console.log("huy" + $scope.shoesdata);
+
     $scope.displayShoes = displayShoes;
 }]);
+

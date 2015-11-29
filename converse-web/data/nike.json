@@ -1,7 +1,23 @@
 {
-  "name": "Nike Air Max",
-  "price": 350000,
-  "color": "Hồng",
-  "material": "Vải (Poly)",
-  "imageUrl":"https://farm6.staticflickr.com/5808/23174288811_33f6fc9782_o.jpg"
+  "id": 1,
+  "type": "Nike",
+  "items": [
+    {
+      "id" : 1,
+      "name": "Nike Air Max",
+      "price": 350000,
+      "color": "Hồng",
+      "material": "Vải (Poly)",
+      "imageUrl": "https://farm6.staticflickr.com/5808/23174288811_33f6fc9782_o.jpg"
+    },
+
+    {
+      "id" : 2,
+      "name": "Nike Pro",
+      "price": 123000,
+      "color": "Hồng",
+      "material": "Vải (Poly)",
+      "imageUrl": "https://farm6.staticflickr.com/5808/23174288811_33f6fc9782_o.jpg"
+    }
+  ]
 }
