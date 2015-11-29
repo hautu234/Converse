@@ -16,54 +16,27 @@
 
     <!-- Custom CSS -->
     <link href="css/shop-homepage.css" rel="stylesheet">
-	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- AngularJS definition -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
 
     <!-- Custom Javascripts -->
-	<script src="js/conversebmt.js"></script>
+    <script src="js/conversebmt.js"></script>
 
-
+    <script src="js/shoescontroller.js"></script>
 </head>
 
 <body ng-app="converseBMT">
-
     <!-- Navigation -->
     <div ng-include="'partials/header.html'"></div>
 
+    <div ng-include="'partials/detailedshoescontainer.html'" ng-controller="shoesController"></div>
 
-    <!-- Page Content -->
-    <div class="container">
+    <hr>
 
-        <div class="row">
-
-            <div ng-include="'partials/sidebar.html'"></div>
-
-
-            <div class="col-md-9">
-                <div ng-include="'partials/carousel.html'"></div>
-                <div ng-include="'partials/shoescontainer.html'"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- /.container -->
-    <div class="container">
-        <hr>
-        <div ng-include="'partials/footer.html'"></div>
-    </div>
-    <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
+    <div ng-include="'partials/footer.html'"></div>
 </body>
 
 </html>
