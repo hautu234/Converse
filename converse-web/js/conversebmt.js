@@ -1,5 +1,3 @@
-var app = angular.module('converseBMT', []);
-
-app.controller('mainCtrl', function($scope){
-	$scope.variable = "Hello";
+jQuery(document).ready(function() {
+    $('.pgwSlideshow').pgwSlideshow();
 });
