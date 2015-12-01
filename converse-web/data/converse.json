@@ -1,0 +1,112 @@
+{
+  "id": 1,
+  "type": "Converse Lowtop",
+  "items": [
+    {
+      "name": "Converse ",
+      "price": 200000,
+      "color": "Đen",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5770/22716413947_fe43fb7f53_o.png"
+    },
+    {
+      "name": "Converse",
+      "price": 200000,
+      "color": "Trắng",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5781/22742615949_8c6bb1c1d9_o.png"
+    },
+    {
+      "name": "Converse",
+      "price": 200000,
+      "color": "Xanh Navy",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5688/23120905732_31d5e75d58_o.png"
+    },
+    {
+      "name": "Converse",
+      "price": 200000,
+      "color": "Tím",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/579/23146479511_66e7b8bce8_o.png"
+    },
+    {
+      "name": "Converse ",
+      "price": 200000,
+      "color": "Đỏ Đô",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5627/22742616909_14f555ae1e_o.png"
+    },
+    {
+      "name": "Converse ",
+      "price": 200000,
+      "color": "Xám ",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5813/22814725930_416d8dddc9_o.png"
+    },
+    {
+      "name": "Converse",
+      "price": 200000,
+      "color": "Đỏ Tươi",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/678/22742615579_aa6ca6d2a1_o.png"
+    },
+	{
+      "name": "Converse",
+      "price": 240000,
+      "color": "Full Black",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5782/23146478621_1c56fea88b_o.png"
+    },
+	{
+      "name": "Converse",
+      "price": 240000,
+      "color": "Xanh Dương",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/648/22742907139_bba3db16d2_o.jpg"
+    },
+	{
+      "name": "Converse",
+      "price": 200000,
+      "color": "Xanh Ngọc",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5821/22513690683_6fb6789341_o.jpg"
+    },
+	{
+      "name": "Converse",
+      "price": 260000,
+      "color": "Jean",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5733/22742617459_9abe804102_o.jpg"
+    },
+	{
+      "name": "Converse",
+      "price": 240000,
+      "color": "Xanh Ý",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5691/23146480161_a6685ec695_o.jpg"
+    },
+	{
+      "name": "Converse",
+      "price": 240000,
+      "color": "Full Trắng",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/680/23146194032_71d0fa527c_o.png"
+    },
+	{
+      "name": "Converse",
+      "price": 200000,
+      "color": "Hồng Nhạt",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/585/23135827065_013ae28dca_o.jpg"
+    },
+	{
+      "name": "Converse",
+      "price": 200000,
+      "color": "Hồng Đậm",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5759/23146193882_44e82f42a1_o.jpg"
+    }
+	
+  ]
+}

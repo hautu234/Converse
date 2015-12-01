@@ -1,0 +1,55 @@
+{
+  "id": 1,
+  "type": "Nike",
+  "items": [
+    {
+      "name": "Nike",
+      "price": 350000,
+      "color": "Xám Hồng",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5790/23148749492_443e7f16c3_o.jpg"
+    },
+    {
+      "name": "Nike",
+      "price": 350000,
+      "color": "Đen",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/706/22842553610_f32342de85_o.jpg"
+    },
+    {
+      "name": "Nike",
+      "price": 350000,
+      "color": "Hồng",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/685/23148749662_9667c913ba_o.jpg"
+    },
+    {
+      "name": "Nike",
+      "price": 350000,
+      "color": "Xám",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5749/22842553430_a7d56a41a2_o.jpg"
+    },
+    {
+      "name": "Nike Air Force",
+      "price": 350000,
+      "color": "Trắng",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/632/23138374215_c714791bd3_o.jpg"
+    },
+    {
+      "name": "Nike ",
+      "price": 350000,
+      "color": "Trắng , Đen ",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/714/22744219537_87d3a514b0_o.jpg"
+    },
+    {
+      "name": "Nike",
+      "price": 350000,
+      "color": "Hồng",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5808/23174288811_33f6fc9782_o.jpg"
+    }
+  ]
+}
