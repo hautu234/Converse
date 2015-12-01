@@ -3,11 +3,38 @@
   "type": "Converse Classic Cao Cổ ",
   "items": [
     {
+      "id": "converse-id-1",
       "name": "Chuck Taylor Classic ",
       "price": 220000,
       "color": "Đen",
       "material": "Vải (Poly)",
-      "imageUrl":"https://farm6.staticflickr.com/5821/22512184724_1cd438aef9_o.png"
+      "imageUrl":"https://farm6.staticflickr.com/5821/22512184724_1cd438aef9_o.png",
+      "carouselImages": [
+        {
+          "name": "Converse Black",
+          "url": "https://farm1.staticflickr.com/624/21416496774_72be83fdc3_o.jpg"
+        },
+        {
+          "name": "",
+          "url": "https://farm6.staticflickr.com/5775/21851140740_3a7400d27a_o.jpg"
+        },
+        {
+          "name": "",
+          "url": "https://farm1.staticflickr.com/728/21418162823_b20cb48dd3_o.jpg"
+        },
+        {
+          "name": "",
+          "url": "https://farm6.staticflickr.com/5646/22039286185_82abece979_o.jpg"
+        },
+        {
+          "name": "",
+          "url": "https://farm1.staticflickr.com/655/22049331291_07ab6d7ffa_o.jpg"
+        },
+        {
+          "name": "",
+          "url": "https://farm1.staticflickr.com/550/19091660886_bc430653bf_o.jpg"
+        }
+      ]
     },
     {
       "name": "Chuck Taylor Classic ",
