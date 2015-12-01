@@ -1,0 +1,34 @@
+{
+  "id": 5,
+  "type": "Adidas ",
+  "items": [
+    {
+      "name": "Adidas Zx",
+      "price": 350000,
+      "color": "Đỏ Đô",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/590/22923322389_e3dc0c6604_o.jpg"
+    },
+    {
+      "name": "Adidas Zx",
+      "price": 350000,
+      "color": "3D",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/740/23291244505_6eef34a03f_o.jpg"
+    },
+    {
+      "name": "Adidas Zx",
+      "price": 350000,
+      "color": "Hồng",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5671/23182946592_a4165923fb_o.jpg"
+    },
+    {
+      "name": "Adidas Zx",
+      "price": 350000,
+      "color": "3D",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/758/23265113046_608b411469_o.jpg"
+    }
+  ]
+}

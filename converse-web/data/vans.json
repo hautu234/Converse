@@ -1,55 +1,76 @@
 {
-  "id": 1,
-  "type": "Vans",
+  "id": 3,
+  "type": "Vans Classic",
   "items": [
     {
-      "name": "Vans",
-      "price": 250000,
-      "color": "Xám Hồng",
-      "material": "Vải (Poly)",
-      "imageUrl":"https://farm6.staticflickr.com/5790/23148749492_443e7f16c3_o.jpg"
-    },
-    {
-      "name": "Vans",
+      "name": "Vans Classic",
       "price": 250000,
       "color": "Đen",
       "material": "Vải (Poly)",
-      "imageUrl":"https://farm1.staticflickr.com/706/22842553610_f32342de85_o.jpg"
+      "imageUrl":"https://farm1.staticflickr.com/634/22512186364_d2e91fe674_o.jpg"
     },
     {
-      "name": "Vans",
+      "name": "Vans Classic",
+      "price": 250000,
+      "color": "Xanh Navy",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5700/22513691743_d99dab7321_o.jpg"
+    },
+    {
+      "name": "Vans Classic",
+      "price": 250000,
+      "color": "Đỏ",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/602/22512186024_7d32b84f8d_o.jpg"
+    },
+    {
+      "name": "Vans Classic",
+      "price": 250000,
+      "color": "Full Black",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/571/23120906002_d0e7227bfa_o.jpg"
+    },
+    {
+      "name": "Vans Classic",
       "price": 250000,
       "color": "Hồng",
       "material": "Vải (Poly)",
-      "imageUrl":"https://farm1.staticflickr.com/685/23148749662_9667c913ba_o.jpg"
+      "imageUrl":"https://farm1.staticflickr.com/668/22513691503_2078e5a338_o.jpg"
     },
     {
-      "name": "Vans",
+      "name": "Vans Classic ",
       "price": 250000,
-      "color": "Xám",
+      "color": "Đỏ Đô ",
       "material": "Vải (Poly)",
-      "imageUrl":"https://farm6.staticflickr.com/5749/22842553430_a7d56a41a2_o.jpg"
+      "imageUrl":"https://farm6.staticflickr.com/5832/23146477911_5f31de3a56_o.jpg"
     },
     {
-      "name": "Vans Air Force",
+      "name": "Vans Era",
+      "price": 300000,
+      "color": "Phối Da ",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/713/22769015389_570ee1859f_o.jpg"
+    },
+	{
+      "name": "Vans Classic",
       "price": 250000,
       "color": "Trắng",
       "material": "Vải (Poly)",
-      "imageUrl":"https://farm1.staticflickr.com/632/23138374215_c714791bd3_o.jpg"
+      "imageUrl":"https://farm6.staticflickr.com/5770/22814724030_e932eb53cc_o.jpg"
     },
     {
-      "name": "Vans ",
+      "name": "Vans Classic ",
       "price": 250000,
-      "color": "Trắng , Đen ",
+      "color": "Xanh Ngọc ",
       "material": "Vải (Poly)",
-      "imageUrl":"https://farm1.staticflickr.com/714/22744219537_87d3a514b0_o.jpg"
+      "imageUrl":"https://farm6.staticflickr.com/5773/23172547441_2bef7abe6b_o.jpg"
     },
     {
-      "name": "Vans",
+      "name": "Vans Classic",
       "price": 250000,
-      "color": "Hồng",
+      "color": "Tím ",
       "material": "Vải (Poly)",
-      "imageUrl":"https://farm6.staticflickr.com/5808/23174288811_33f6fc9782_o.jpg"
+      "imageUrl":"https://farm6.staticflickr.com/5767/22512185224_e85c995707_o.jpg"
     }
   ]
 }

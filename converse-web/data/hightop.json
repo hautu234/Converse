@@ -1,0 +1,69 @@
+{
+  "id": 4,
+  "type": "Converse Classic Cao Cổ ",
+  "items": [
+    {
+      "name": "Chuck Taylor Classic ",
+      "price": 220000,
+      "color": "Đen",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5821/22512184724_1cd438aef9_o.png"
+    },
+    {
+      "name": "Chuck Taylor Classic ",
+      "price": 220000,
+      "color": "Trắng",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/623/22512184874_0db6c7d0cb_o.png"
+    },
+    {
+      "name": "Chuck Taylor Classic ",
+      "price": 220000,
+      "color": "Xanh Navy",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/564/22513690013_13606e1d09_o.png"
+    },
+    {
+      "name": "Chuck Taylor Classic ",
+      "price": 220000,
+      "color": "Đỏ Tươi",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5669/22742615649_e5117a7525_o.png"
+    },
+    {
+      "name": "Chuck Taylor Classic ",
+      "price": 260000,
+      "color": "Full Black",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5727/22814724750_a14beafe88_o.png"
+    },
+    {
+      "name": "Chuck Taylor Classic  ",
+      "price": 220000,
+      "color": "Hồng ",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5623/22716414147_161a89c80b_o.png"
+    },
+    {
+      "name": "Chuck Taylor Classic",
+      "price": 260000,
+      "color": "Full White ",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5745/22716415297_0d8afc5c25_o.png"
+    },
+	{
+      "name": "Chuck Taylor Classic ",
+      "price": 220000,
+      "color": "Xanh Ngọc",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/588/22513690853_a6a187ec95_o.jpg"
+    },
+    {
+      "name": "Chuck Taylor Classic  ",
+      "price": 260000,
+      "color": "Xanh Cờ Ý ",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/726/23173523441_e77fc6ce67_o.jpg"
+    }
+  ]
+}

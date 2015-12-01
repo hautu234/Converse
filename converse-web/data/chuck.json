@@ -1,0 +1,62 @@
+{
+  "id": 6,
+  "type": "Chuck Taylor II",
+  "items": [
+    {
+      "name": "Chuck Taylor II",
+      "price": 300000,
+      "color": "Đen",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5699/22716415097_1507158f52_o.png"
+    },
+    {
+      "name": "Chuck Taylor II",
+      "price": 300000,
+      "color": "Trắng",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5735/22814725190_5bb42b9297_o.png"
+    },
+    {
+      "name": "Chuck Taylor II",
+      "price": 300000,
+      "color": "Xanh Navy",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5812/22742616669_dbfdba2885_o.png"
+    },
+    {
+      "name": "Chuck Taylor II",
+      "price": 300000,
+      "color": "Đỏ Tươi",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/740/23120905652_df1c9d0f5e_o.png"
+    },
+	{
+      "name": "Chuck Taylor II",
+      "price": 300000,
+      "color": "Đen",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5734/22841432770_9e00dba90f_o.png"
+    },
+    {
+      "name": "Chuck Taylor II",
+      "price": 300000,
+      "color": "Trắng",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/588/23173171441_c7aa8b0125_o.png"
+    },
+    {
+      "name": "Chuck Taylor II",
+      "price": 300000,
+      "color": "Xanh Navy",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm1.staticflickr.com/631/23111138346_bc657e858b_o.png"
+    },
+    {
+      "name": "Chuck Taylor II",
+      "price": 300000,
+      "color": "Đỏ Tươi",
+      "material": "Vải (Poly)",
+      "imageUrl":"https://farm6.staticflickr.com/5668/23137250335_0de3dd44fb_o.png"
+    }
+  ]
+}
