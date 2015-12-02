@@ -29,8 +29,6 @@ var app = angular.module('converseBMT', ['ngRoute'])
 })
 
 .controller('shoesController', ['$scope','$routeParams', '$location', '$http', function($scope, $routeParams, $location, $http) {
-    console.log("enter controller");
-
     var shoesId = $location.search().shoesId;
     var brand = $location.search().brand;
 
@@ -40,7 +38,7 @@ var app = angular.module('converseBMT', ['ngRoute'])
             $scope.type = response.data.type;
 
             for(i = 0; i < shoes.length; i++) {
-                if(shoes[i] && shoes[i].id === shoesId && shoes[i].carouselImages);
+                if(shoes[i] && shoes[i].id === shoesId && shoes[i].carouselImages)
                 {
                     $scope.carouselImages = shoes[i].carouselImages;
                     break;
