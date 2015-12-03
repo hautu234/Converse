@@ -48,7 +48,7 @@ var app = angular.module('converseBMT', ['ngRoute'])
     }
 
     $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
-        angular.element('.pgwSlideshow').pgwSlideshow();
+        angular.element('.pgwSlideshow').pgwSlideshow({maxHeight:550});
     });
 }]);
 
