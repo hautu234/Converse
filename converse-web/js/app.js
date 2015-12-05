@@ -1,6 +1,13 @@
-var app = angular.module('converseBMT', []);
+'use strict';
 
-app.controller('mainCtrl', function($scope){
-	$scope.variable = "Hello";
-});
+// Declare app level module which depends on views, and components
+angular.module('converseBMT', [
+	'ngRoute',
+	'listing',
+	'shoes',
+    'index',
+    'home'
+]).config(['$routeProvider', function($routeProvider, $locationProvider) {
 
+
+}]);
