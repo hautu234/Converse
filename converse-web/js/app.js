@@ -8,6 +8,5 @@ angular.module('converseBMT', [
     'index',
     'home'
 ]).config(['$routeProvider', function($routeProvider, $locationProvider) {
-
-
+    $routeProvider.otherwise({redirectTo: '/home'});
 }]);
