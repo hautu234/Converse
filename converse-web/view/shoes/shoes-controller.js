@@ -43,7 +43,9 @@ var app = angular.module('shoes', ['ngRoute'])
         }
 
         $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
-            angular.element('.pgwSlideshow').pgwSlideshow({maxHeight:550});
+             if(angular.element('.pgwSlideshow:visible').length < 1 ) {
+                 angular.element('.pgwSlideshow').pgwSlideshow({maxHeight:500});
+             }
         });
     }]);
 
