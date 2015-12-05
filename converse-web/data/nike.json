@@ -1,6 +1,7 @@
 {
   "id": 1,
-  "type": "Nike",
+  "type": "nike",
+  "name": "Nike",
   "items": [
     {
       "name": "Nike",

@@ -1,6 +1,7 @@
 {
   "id": 2,
-  "type": "Converse Lowtop",
+  "type": "lowtop",
+  "name": "Converse Lowtop",
   "items": [
     {
       "id": "converse-id-1",

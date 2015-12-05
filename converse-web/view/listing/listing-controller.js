@@ -22,6 +22,7 @@ var app = angular.module('listing', ['ngRoute'])
             $http.get('/data/' + brand + '.json').then(function(response) {
                 shoes = response.data.items;
                 $scope.type = response.data.type;
+                $scope.name = response.data.name;
 
                 var displayShoes = [];
                 var temp = [];

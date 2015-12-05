@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Converse Vans Buôn Ma Thuột
-                <small>{{type}} </small>
+                <small>{{name}} </small>
             </h1>
         </div>
     </div>
@@ -13,12 +13,12 @@
     <!-- Projects Row -->
     <div class="row" ng-repeat="displayShoe in displayShoes">
         <div class="col-md-3 portfolio-item" ng-repeat="shoe in displayShoe">
-            <a href="#">
+            <a href="#/shoes?brand={{type}}&shoesId={{shoe.id}}">
                 <img class="img-responsive" src="{{shoe.imageUrl}}" alt="">
+                <h3>
+                    {{shoe.name}}
+                </h3>
             </a>
-            <h3>
-                <a href="#">{{shoe.name}} </a>
-            </h3>
             <p>Giá : {{shoe.price}}</p>
             <p>Màu sắc : {{shoe.color}} </p>
             <p>Chất liệu : {{shoe.material}} </p>
