@@ -215,6 +215,7 @@
                 pgwSlideshow.data.push(element);
 
                 $(this).addClass('elt_' + element.id);
+                console.log("why you don't fucking come here" + element.id);
                 $(this).wrapInner('<span class="ps-item' + (elementId == 1 ? ' ps-selected' : '') + '"></span>');
                 
                 // Set element in the current list
