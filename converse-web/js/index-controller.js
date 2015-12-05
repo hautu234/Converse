@@ -3,7 +3,7 @@
 var app = angular.module('index', ['ngRoute'])
     .config(function ($routeProvider, $locationProvider) {
         //configure the routing rules here
-        $routeProvider.when('/', {
+        $routeProvider.when('/index', {
             templateUrl: 'view/index.html',
             controller: 'indexController'
         });
