@@ -9,7 +9,6 @@ var app = angular.module('index', ['ngRoute'])
         });
     })
 
-
     .controller('indexController', ['$scope','$routeParams', '$location', '$http', function($scope, $routeParams, $location, $http) {
 
     }]);
