@@ -353,7 +353,7 @@
             // Update list items
             console.log("removing selected at element id:" + element.id);
             pgwSlideshow.plugin.find('.ps-list > ul > li .ps-item').removeClass('ps-selected');
-            pgwSlideshow.plugin.find('.ps-list > ul > li.elt_' + element.id).addClass('ps-selected');
+            pgwSlideshow.plugin.find('.ps-list > ul > li.elt_' + element.id + " > span").addClass('ps-selected');
 
             // Check selected item
             if (pgwSlideshow.config.displayList) {
