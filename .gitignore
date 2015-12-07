@@ -2,3 +2,4 @@
 /converse-web/.idea
 /converse-web/node_modules
 /*.log
+/converse-web/public/bower_components
