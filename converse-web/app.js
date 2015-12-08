@@ -30,13 +30,14 @@ router.route('/bears')
 
 app.use('/api', router);
 
+app.use(require('./controllers'))
 
-var server = app.listen(3000, function () {
+var server = app.listen(8080, function () {
     var host = server.address().address;
     var port = server.address().port;
 
     console.log('Example app listening at http://%s:%s', host, port);
 });
 
-var mongoose   = require('mongoose');
-mongoose.connect('localhost:27017/local'); // connect to our database
+// var mongoose   = require('mongoose');
+// mongoose.connect('localhost:27017/local'); // connect to our database
