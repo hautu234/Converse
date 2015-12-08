@@ -1,1 +1,3 @@
-// Export some model methods
+exports.all = function(cb) {
+    cb();
+}
