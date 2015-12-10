@@ -215,6 +215,7 @@
                 pgwSlideshow.data.push(element);
 
                 $(this).addClass('elt_' + element.id);
+                console.log("why you don't fucking come here" + element.id);
                 $(this).wrapInner('<span class="ps-item' + (elementId == 1 ? ' ps-selected' : '') + '"></span>');
                 
                 // Set element in the current list
@@ -351,8 +352,9 @@
             }
 
             // Update list items
+            console.log("removing selected at element id:" + element.id);
             pgwSlideshow.plugin.find('.ps-list > ul > li .ps-item').removeClass('ps-selected');
-            pgwSlideshow.plugin.find('.ps-list > ul > li.elt_' + element.id + ' .ps-item').addClass('ps-selected');
+            pgwSlideshow.plugin.find('.ps-list > ul > li.elt_' + element.id + " > span").addClass('ps-selected');
 
             // Check selected item
             if (pgwSlideshow.config.displayList) {

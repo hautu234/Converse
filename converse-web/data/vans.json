@@ -1,6 +1,7 @@
 {
   "id": 3,
-  "type": "Vans Classic",
+  "type": "vans",
+  "name": "Vans Classic",
   "items": [
     {
       "id": "vans-id-1",

@@ -1,0 +1,4 @@
+/converse-web/bower_components
+/converse-web/.idea
+/converse-web/node_modules
+/*.log
