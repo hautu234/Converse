@@ -9,4 +9,12 @@ angular.module('converseBMT', [
     'home'
 ]).config(['$routeProvider', function($routeProvider, $locationProvider) {
     $routeProvider.otherwise({redirectTo: '/home'});
-}]);
+}]).directive('myAdSense', function() {
+    return {
+        restrict: 'A',
+        templateUrl: 'partial/googleads.html',
+        controller: function(){
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    };
+});;
