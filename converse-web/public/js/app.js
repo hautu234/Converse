@@ -15,6 +15,11 @@ angular.module('converseBMT', [
         transclude: true,
         replace: true,
         template: '<div ng-transclude></div>',
-        link: function ($scope, element, attrs) {}
+        link: function ($scope, element, attrs) {
+            if (!window.adsbygoogle) {
+                window.adsbygoogle = [];
+            }
+            window.adsbygoogle.push({});
+        }
     }
 });
