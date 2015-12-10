@@ -12,9 +12,9 @@ angular.module('converseBMT', [
 }]).directive('myAdSense', function() {
     return {
         restrict: 'A',
-        templateUrl: 'partial/googleads.html',
-        controller: function(){
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        }
-    };
-});;
+        transclude: true,
+        replace: true,
+        template: '<div ng-transclude></div>',
+        link: function ($scope, element, attrs) {}
+    }
+});
