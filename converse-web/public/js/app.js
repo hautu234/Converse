@@ -6,7 +6,8 @@ angular.module('converseBMT', [
 	'listing',
 	'shoes',
     'index',
-    'home'
+    'home',
+    'header'
 ]).config(['$routeProvider', function($routeProvider, $locationProvider) {
     $routeProvider.otherwise({redirectTo: '/home'});
 }]).directive('myAdSense', function() {
