@@ -14,7 +14,6 @@ var app = angular.module('index', ['ngRoute'])
             restrict: 'A',
             link: function (scope, element, attr) {
                 $timeout(function(){
-                    console.log($('.carousel-control'));
                     $('.carousel-control, .carousel-item').attr('disabled', true);
                     $('.carousel-control, .carousel-item').click(function(e) {
                         e.preventDefault();
