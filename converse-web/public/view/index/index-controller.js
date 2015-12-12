@@ -9,6 +9,21 @@ var app = angular.module('index', ['ngRoute'])
         });
     })
 
-    .controller('indexController', ['$scope','$routeParams', '$location', '$http', function($scope, $routeParams, $location, $http) {
+    .directive('onFinishRender', function ($timeout) {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attr) {
+                $timeout(function(){
+                    console.log($('.carousel-control'));
+                    $('.carousel-control, .carousel-item').attr('disabled', true);
+                    $('.carousel-control, .carousel-item').click(function(e) {
+                        e.preventDefault();
+                    });
+                },0);
+            }
+        }
+    })
 
-    }]);
+    .controller('indexController', ['$timeout','$scope','$routeParams', '$location', '$http', function($timeout, $scope, $routeParams, $location, $http) {
+
+    }])
