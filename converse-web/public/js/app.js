@@ -7,9 +7,12 @@ angular.module('converseBMT', [
 	'shoes',
     'index',
     'home',
-    'header'
-]).config(['$routeProvider', function($routeProvider, $locationProvider) {
+    'header',
+    'admin',
+    'login'
+]).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.otherwise({redirectTo: '/home'});
+    $locationProvider.html5Mode(true);
 }]).directive('myAdSense', function() {
     return {
         restrict: 'A',
