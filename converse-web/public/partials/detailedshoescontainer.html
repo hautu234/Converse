@@ -13,7 +13,7 @@
     <!-- Projects Row -->
     <div class="row" ng-repeat="displayShoe in displayShoes">
         <div class="col-md-3 portfolio-item" ng-repeat="shoe in displayShoe">
-            <a href="#/shoes?brand={{type}}&shoesId={{shoe.id}}">
+            <a href="/shoes?brand={{type}}&shoesId={{shoe.id}}">
                 <img class="img-responsive" ng-src="{{shoe.imageUrl}}" alt="">
                 <h3>
                     {{shoe.name}}

@@ -130,7 +130,7 @@ app.use('/api', router);
 
 app.use(require('./controllers'));
 
-// default route to all 
+// default route to all
 app.get('*', function(req, res){
     res.sendfile(__dirname + "/public/index.html");
 });
