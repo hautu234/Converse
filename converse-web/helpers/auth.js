@@ -21,13 +21,17 @@ exports.authenticate = function (name, pass, fn) {
     // found the user
     hash(pass, user.salt, function(err, hash){
         if (err) return fn(err);
-        if (hash == user.hash) return fn(null, user);
+        if (hash == user.hash) {
+            console.log("user found : " + user);
+            return fn(null, user);
+        }
         fn(new Error('invalid password'));
     });
 };
 
 exports.restrict = function (req, res, next) {
     if (req.session.user) {
+        console.log(req.session.user + " is authenticated");
         next();
     } else {
         console.log("not a user, access denied!");
