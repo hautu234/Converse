@@ -4,7 +4,7 @@ var express = require('express')
 router.use('/comments', require('./comments'));
 router.use('/users', require('./users'));
 router.use('/admin', require('./admin'));
-router.use('/login', require('./login'));
+// router.use('/login', require('./login'));
 router.use('/api', require('./api'));
 
 router.get('/', function(req, res) {

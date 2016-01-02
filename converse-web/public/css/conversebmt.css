@@ -5,3 +5,16 @@
 .carousel-control-right {
     margin-right: -45px !important;
 }
+
+.welcome-message {
+    color: #00aced;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+.username {
+    color: #00aced;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

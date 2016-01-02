@@ -26,4 +26,9 @@ angular.module('converseBMT', [
             window.adsbygoogle.push({});
         }
     }
-});
+}).controller('mainController', ['$window','$rootScope', function($window,$rootScope) {
+    if($window.sessionStorage.loggedUser) {
+        $rootScope.loggedUser = $window.sessionStorage.loggedUser;
+
+    }
+}]);

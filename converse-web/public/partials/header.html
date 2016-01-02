@@ -58,7 +58,7 @@
                 </ul>
                 </ul>
 
-                <form class="navbar-form navbar-right" role="search">
+                <form class="navbar-form navbar-right" role="search" ng-if="!loggedUser">
                     <div class="form-group">
                         <input type="text" class="form-control" name="username" placeholder="Username">
                     </div>
@@ -69,6 +69,11 @@
                     <button type="submit" class="btn btn-primary active">Register</button>
 
                 </form>
+
+                <div class="navbar-form navbar-right" ng-if="loggedUser">
+                    <span class="welcome-message">Welcome</span> <span class="username"> {{loggedUser}} </span>
+                </div>
+
             </div>
             <!-- /.navbar-collapse -->
         </div>
