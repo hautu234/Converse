@@ -1,10 +1,9 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var hash = require('./helpers/pass').hash;
 var session = require('express-session');
 var path    = require("path");
-
+var mongoConnect = require('./helpers/mongoconnect');
 
 app.use(session({
     resave: false, // don't save session if unmodified
@@ -51,6 +50,8 @@ app.get('*', function(req, res){
     res.sendfile(__dirname + "/public/index.html");
 });
 
+mongoConnect.connect();
+
 var server = app.listen(8080, function () {
     var host = server.address().address;
     var port = server.address().port;
@@ -58,5 +59,3 @@ var server = app.listen(8080, function () {
     console.log('Example app listening at http://%s:%s', host, port);
 });
 
-// var mongoose   = require('mongoose');
-// mongoose.connect('localhost:27017/local'); // connect to our database

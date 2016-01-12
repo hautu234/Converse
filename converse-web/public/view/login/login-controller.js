@@ -2,9 +2,9 @@ var app = angular.module('login', ['ngRoute'])
 
     .config(function ($routeProvider, $locationProvider, $logProvider) {
         //configure the routing rules here
-        $routeProvider.when('/login', {
+        $routeProvider.when('/onboarding', {
             controller: 'loginController',
-            templateUrl: 'view/login/login.html'
+            templateUrl: 'view/login/onboarding.html',
         });
 
         $logProvider.debugEnabled(true);
@@ -27,6 +27,13 @@ var app = angular.module('login', ['ngRoute'])
         $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
 
         });
+
+        var action = $location.search().action;
+        if(!action || action === "login") {
+            $scope.isRegistering = false;
+        } else {
+            $scope.isRegistering = true;
+        }
 
         $scope.credential = {};
 

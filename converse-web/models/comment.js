@@ -1,4 +1,3 @@
-
 // Create new comment in your database and return its id
 exports.create = function(user, text, cb) {
   cb('12345')
