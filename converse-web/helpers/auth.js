@@ -1,4 +1,4 @@
-var hash = require('../helpers/pass').hash;
+var hash = require('../helpers/crypto').hash;
 
 var users = {
     admin: { name: 'admin' }

@@ -28,26 +28,46 @@ var app = angular.module('login', ['ngRoute'])
 
         });
 
+        $scope.change = function() {
+            $scope.result.errorMessage = "";
+        };
+
+        var url = "/api";
         var action = $location.search().action;
         if(!action || action === "login") {
             $scope.isRegistering = false;
+            url = url + "/auth"
         } else {
             $scope.isRegistering = true;
+            url = url + "/register";
         }
 
         $scope.credential = {};
+        $scope.result = {};
 
         $scope.submit = function() {
+
             if ($scope.credential.username && $scope.credential.password) {
-                var data = {'username':$scope.credential.username, 'password':$scope.credential.password};
-                $http.post('/api/auth', data).then(
+                var data = {
+                    'username':$scope.credential.username,
+                    'email':$scope.credential.email,
+                    'password':$scope.credential.password
+                };
+
+                console.log("calling " + url + " with " + data);
+                $http.post(url, data).then(
                     function(response) {
-                        $rootScope.loggedUser = $scope.credential.username;
-                        $window.sessionStorage.loggedUser = $scope.credential.username;
-                        $location.path( "/index" );
+                        var result = response.data.result;
+                        if(result === "success!") {
+                            $rootScope.loggedUser = $scope.credential.username;
+                            $window.sessionStorage.loggedUser = $scope.credential.username;
+                            $location.path( "/index" );
+                        } else {
+                            $scope.result.errorMessage = response.data.message;
+                        }
                     },
                     function(response) {
-                        console.log("failed");
+                        console.log("Failed: " + response.data);
                     }
                 );
             }

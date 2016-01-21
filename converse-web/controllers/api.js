@@ -6,6 +6,7 @@ router.get('/', function(req, res){
 });
 
 router.use('/auth', require('./auth'));
+router.use('/register', require('./users'));
 
 router.route('/bears')
     // create a bear (accessed at POST http://localhost:8080/api/bears)
