@@ -39,13 +39,17 @@ var app = angular.module('login', ['ngRoute'])
             url = url + "/auth"
         } else {
             $scope.isRegistering = true;
-            url = url + "/register";
+            url = url + "/user/create";
         }
 
         $scope.credential = {};
         $scope.result = {};
 
         $scope.submit = function() {
+            if($scope.isRegistering && ($scope.credential.password != $scope.credential.confirmedPassword)) {
+                $scope.result.errorMessage = "Password doesn't match!";
+                return;
+            }
 
             if ($scope.credential.username && $scope.credential.password) {
                 var data = {
