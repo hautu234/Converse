@@ -62,9 +62,12 @@ var app = angular.module('login', ['ngRoute'])
                 $http.post(url, data).then(
                     function(response) {
                         var result = response.data.result;
+                        console.log(response.data);
                         if(result === "success!") {
                             $rootScope.loggedUser = $scope.credential.username;
                             $window.sessionStorage.loggedUser = $scope.credential.username;
+                            $scope.result.errorMessage = "";
+                            console.log("login/register succeeded! - redirecting");
                             $location.path( "/index" );
                         } else {
                             $scope.result.errorMessage = response.data.message;

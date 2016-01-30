@@ -21,10 +21,10 @@ var createUser = function(req, res, user , err) {
         if(err.code && err.code === 11000) {
             message = "The user you're registering already existed!";
         }
-        res.json({RESULT:FAILED,MESSAGE:message});
+        res.json({result:FAILED,message:message});
     } else {
         console.log("user has been saved successfully");
-        res.json({RESULT:SUCCESS,"message":user});
+        res.json({result:SUCCESS,message:user});
     }
 };
 
