@@ -24,7 +24,8 @@ h6 {
 padding-top:100px;}
 
 .topnav {
-    font-size: 14px; 
+    font-size: 14px;
+    min-height: 70px;
 }
 
 .lead {
