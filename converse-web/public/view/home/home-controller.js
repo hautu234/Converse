@@ -10,7 +10,7 @@ var app = angular.module('home', ['ngRoute'])
     })
 
 
-    .controller('homeController', ['$scope','$routeParams', '$location', '$http', function($scope, $routeParams, $location, $http) {
-
+    .controller('homeController', ['$scope','$routeParams', '$location', '$http','$rootScope', function($scope, $routeParams, $location, $http, $rootScope) {
+        $rootScope.css = "home.css";
     }]);
 

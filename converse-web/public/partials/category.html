@@ -1,0 +1,88 @@
+<table class="table table-striped">
+    ...
+</table>
+
+
+<form class="form-horizontal">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Category</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="category_name">Category Name</label>
+            <div class="col-md-5">
+                <input id="category_name" name="category_name" type="text" placeholder="Converse, Nike, Adidas ..." class="form-control input-md">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="category_type">Category Type</label>
+            <div class="col-md-5">
+                <input id="category_type" name="category_type" type="text" placeholder="High Top, Low Top ..." class="form-control input-md">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="image_uri">Image URI</label>
+            <div class="col-md-5">
+                <input id="image_uri" name="image_uri" type="text" placeholder="Enter image uri here" class="form-control input-md">
+
+            </div>
+        </div>
+
+        <!-- Multiple Checkboxes -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="main-category">Is Main Category</label>
+            <div class="col-md-4">
+                <div class="checkbox">
+                    <label for="main-category-0">
+                        <input type="checkbox" name="main-category" id="main-category-0" value="1">
+                        Yes
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="rating">Average Rating</label>
+            <div class="col-md-2">
+                <input id="rating" name="rating" type="text" placeholder="4 or 5*" class="form-control input-md">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="review"></label>
+            <div class="col-md-2">
+                <input id="review" name="review" type="text" placeholder="# review" class="form-control input-md">
+
+            </div>
+        </div>
+
+        <!-- Textarea -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="description">Description</label>
+            <div class="col-md-4">
+                <textarea class="form-control" id="description" name="description"></textarea>
+            </div>
+        </div>
+
+        <!-- Button (Double) -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="submit"></label>
+            <div class="col-md-8">
+                <button id="submit" name="submit" class="btn btn-primary">Submit</button>
+                <button id="reset" name="reset" class="btn btn-primary">Reset</button>
+            </div>
+        </div>
+
+    </fieldset>
+</form>

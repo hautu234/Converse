@@ -1,9 +1,9 @@
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema
+    Schema = mongoose.Schema,
     md5 = require('js-md5');
+
 // create a schema
 var userSchema = new Schema({
-    id: String,
     name: String,
     username: { type: String, required: true, unique: true, index:true },
     password: { type: String, required: true },

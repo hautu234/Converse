@@ -9,7 +9,8 @@ angular.module('converseBMT', [
     'home',
     'header',
     'admin',
-    'login'
+    'login',
+    'category'
 ]).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.otherwise({redirectTo: '/home'});
     $locationProvider.html5Mode(true);
@@ -26,9 +27,10 @@ angular.module('converseBMT', [
             window.adsbygoogle.push({});
         }
     }
-}).controller('mainController', ['$window','$rootScope', function($window,$rootScope) {
+}).controller('mainController', ['$window','$rootScope','$location', function($window,$rootScope,$location) {
     if($window.sessionStorage.loggedUser) {
         $rootScope.loggedUser = $window.sessionStorage.loggedUser;
+        console.log($location.path);
 
     }
 }]);

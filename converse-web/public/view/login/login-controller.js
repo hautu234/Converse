@@ -24,6 +24,8 @@ var app = angular.module('login', ['ngRoute'])
     })
 
     .controller('loginController', ['$window','$rootScope','$scope','$routeParams', '$location', '$http', function($window,$rootScope, $scope, $routeParams, $location, $http) {
+        $rootScope.css = "onboarding.css";
+
         $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
 
         });
