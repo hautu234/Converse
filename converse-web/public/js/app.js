@@ -33,4 +33,6 @@ angular.module('converseBMT', [
         console.log($location.path);
 
     }
+
+    $rootScope.css = "";
 }]);
