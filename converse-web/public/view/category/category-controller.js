@@ -42,6 +42,12 @@ var app = angular.module('category', ['ngRoute'])
             });
         }
 
+        $http.get('/api/category/get-all').then(function(response) {
+            categories = response.data.MESSAGE;
+            $scope.categories = categories;
+            console.log(JSON.stringify(categories));
+        });
+
         $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
 
         });

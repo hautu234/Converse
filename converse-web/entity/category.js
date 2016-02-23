@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
 
 // create a schema
 var categorySchema = new Schema({
-    name: String,
+    name: {type: String, required: true, unique: true, index:true },
     type: String,
     description: String,
 
@@ -13,7 +13,7 @@ var categorySchema = new Schema({
         averageRating: Number,
         numberReviews: Number,
     },
-
+    uri: String,
     created_at: Date,
     updated_at: Date
 });
@@ -30,7 +30,7 @@ categorySchema.pre('save', function(next) {
 
     // generate user uri
     if(!category.uri) {
-        category.uri = category.username;
+        category.uri = category.name;
     }
 
     next();
