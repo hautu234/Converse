@@ -21,10 +21,10 @@ var createCategory = function(req, res, category , err) {
         if(err.code && err.code === 11000) {
             message = "The category you're registering already existed!";
         }
-        res.json({result:FAILED,message:message});
+        res.json({RESULT:FAILED,message:message});
     } else {
         console.log("category has been saved successfully");
-        res.json({result:SUCCESS,message:category});
+        res.json({RESULT:SUCCESS,message:category});
     }
 };
 
@@ -66,7 +66,7 @@ var deleteCategory = function(req, res, category , err) {
         res.json({RESULT:FAILED,MESSAGE:message});
     } else {
         console.log("category has been deleted successfully");
-        res.json({RESULT:SUCCESS,"message":category});
+        res.json({RESULT:SUCCESS,MESSAGE:category});
     }
 };
 
@@ -118,7 +118,7 @@ router.post('/update', function(req,res) {
     if(updatingCategory && updatingCategory._id) {
         var id = updatingCategory._id;
         delete updatingCategory._id; // clear _id field
-        userService.update(req, res, id, updatingCategory, updateUser);
+        categoryService.update(req, res, id, updatingCategory, updateCategory);
     } else {
         res.json({MESSAGE : "invalid parameters!"});
     }

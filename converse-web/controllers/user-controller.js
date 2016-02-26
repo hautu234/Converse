@@ -21,10 +21,10 @@ var createUser = function(req, res, user , err) {
         if(err.code && err.code === 11000) {
             message = "The user you're registering already existed!";
         }
-        res.json({result:FAILED,message:message});
+        res.json({RESULT:FAILED,MESSAGE:message});
     } else {
         console.log("user has been saved successfully");
-        res.json({result:SUCCESS,message:user});
+        res.json({RESULT:SUCCESS,MESSAGE:user});
     }
 };
 
@@ -55,7 +55,7 @@ var updateUser = function(req, res, user , err) {
         res.json({RESULT:FAILED,MESSAGE:message});
     } else {
         console.log("user has been updated successfully");
-        res.json({RESULT:SUCCESS,"message":user});
+        res.json({RESULT:SUCCESS,MESSAGE:user});
     }
 };
 
@@ -66,7 +66,7 @@ var deleteUser = function(req, res, user , err) {
         res.json({RESULT:FAILED,MESSAGE:message});
     } else {
         console.log("user has been deleted successfully");
-        res.json({RESULT:SUCCESS,"message":user});
+        res.json({RESULT:SUCCESS,MESSAGE:user});
     }
 };
 

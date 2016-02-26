@@ -1,14 +1,16 @@
-<form class="form-horizontal">
+<form class="form-horizontal" autocomplete="off" method="POST">
     <fieldset>
 
         <!-- Form Name -->
         <legend>Category</legend>
 
+        <input type="hidden" id="id" ng-model="category.id" value="{{category._id}}" />
+
         <!-- Text input-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="category_name">Category Name</label>
             <div class="col-md-5">
-                <input id="category_name" name="category_name" type="text" placeholder="Converse, Nike, Adidas ..." class="form-control input-md" required>
+                <input id="category_name" name="category_name" type="text" ng-model="category.name" ng-change="change()" placeholder="Converse, Nike, Adidas ..." class="form-control input-md" required>
 
             </div>
         </div>
@@ -17,7 +19,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="category_type">Category Type</label>
             <div class="col-md-5">
-                <input id="category_type" name="category_type" type="text" placeholder="High Top, Low Top ..." class="form-control input-md">
+                <input id="category_type" name="category_type" type="text" ng-model="category.type" ng-change="change()" placeholder="High Top, Low Top ..." class="form-control input-md">
 
             </div>
         </div>
@@ -26,7 +28,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="image_uri">Image URI</label>
             <div class="col-md-5">
-                <input id="image_uri" name="image_uri" type="text" placeholder="Enter image uri here" class="form-control input-md">
+                <input id="image_uri" name="image_uri" type="text" ng-model="category.imageUri" ng-change="change()" placeholder="Enter image uri here" class="form-control input-md">
 
             </div>
         </div>
@@ -37,7 +39,7 @@
             <div class="col-md-4">
                 <div class="checkbox">
                     <label for="main-category-0">
-                        <input type="checkbox" name="main-category" id="main-category-0" value="1">
+                        <input type="checkbox" name="main-category" ng-model="category.mainCategory" ng-change="change()" id="main-category-0" value="1">
                         Yes
                     </label>
                 </div>
@@ -48,7 +50,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="rating">Average Rating</label>
             <div class="col-md-2">
-                <input id="rating" name="rating" type="text" placeholder="4 or 5*" class="form-control input-md">
+                <input id="rating" name="rating" type="text" ng-model="category.rating" ng-change="change()" placeholder="4 or 5*" class="form-control input-md">
 
             </div>
         </div>
@@ -57,7 +59,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="review"></label>
             <div class="col-md-2">
-                <input id="review" name="review" type="text" placeholder="# review" class="form-control input-md">
+                <input id="review" name="review" type="text" ng-model="category.review" ng-change="change()" placeholder="# review" class="form-control input-md">
 
             </div>
         </div>
@@ -66,7 +68,15 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="description">Description</label>
             <div class="col-md-4">
-                <textarea class="form-control" id="description" name="description"></textarea>
+                <textarea class="form-control" id="description" ng-model="category.description" ng-change="change()" name="description"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4">  </label>
+            <div class="col-md-4">
+                <span class="text-success">{{result.successMessage}}</span>
+                <span class="text-danger">{{result.errorMessage}}</span>
             </div>
         </div>
 
@@ -74,8 +84,10 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="submit"></label>
             <div class="col-md-8">
-                <button id="submit" name="submit" class="btn btn-primary">Submit</button>
-                <button id="reset" name="reset" class="btn btn-primary">Reset</button>
+                <button class="btn btn-primary" ng-click="submit()">{{inputdata.submitButtonName}}</button>
+                <button class="btn btn-primary" ng-click="reset()">Reset</button>
+                <button class="btn btn-danger" ng-click="delete()" ng-if="category._id">Delete</button>
+
             </div>
         </div>
 
