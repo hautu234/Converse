@@ -18,7 +18,7 @@
                 <td>{{category._id}}</td>
                 <td>{{category.name}}</td>
                 <td>{{category.type}}</td>
-                <td><img ng-src="{{category.imageUri}}" class="img-rounded" alt="Cinque Terre" width="152" height="118"></td>
+                <td><img ng-src="{{category.imageUri}}" class="img-rounded" width="152" height="118" ng-if="category.imageUri"></td>
                 <td>{{category.mainCategory}}</td>
                 <td>{{category.meta.averageRating}}</td>
                 <td>{{category.meta.numberReviews}}</td>

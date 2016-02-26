@@ -112,6 +112,8 @@ var app = angular.module('category', ['ngRoute'])
                     console.log(response.data);
                     if(result === "success!") {
                         $scope.result.successMessage = message;
+                        $scope.category = response.data.MESSAGE;
+                        $scope.inputdata.submitButtonName = "Update";
                         fetchCategories();
                     } else {
                         $scope.result.errorMessage = response.data.message;
