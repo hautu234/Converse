@@ -16,12 +16,12 @@
                 </div>
             </div>
 
-            <!-- Text input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="entity_type">Subcategory Type</label>
-                <div class="col-md-5">
-                    <input id="entity_type" name="entity_type" type="text" ng-model="entity.type" ng-change="change()" placeholder="High Top, Low Top ..." class="form-control input-md">
-
+                <label class="col-md-4 control-label" for="category">Category</label>
+                <div class="col-md-4">
+                    <select id="category" name="category" class="form-control">
+                        <option ng-repeat="category in entities.category" value="category._id">{{category.name}}</option>
+                    </select>
                 </div>
             </div>
 
@@ -49,27 +49,28 @@
 
             <!-- Text input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="rating">Average Rating</label>
+                <label class="col-md-4 control-label" for="price">Price</label>
                 <div class="col-md-2">
-                    <input id="rating" name="rating" type="text" ng-model="entity.rating" ng-change="change()" placeholder="4 or 5*" class="form-control input-md">
+                    <input id="price" name="price" type="text" ng-model="entity.price" ng-change="change()" placeholder="200,000đ" class="form-control input-md">
 
                 </div>
             </div>
 
             <!-- Text input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="review"></label>
+                <label class="col-md-4 control-label" for="color">Color</label>
                 <div class="col-md-2">
-                    <input id="review" name="review" type="text" ng-model="entity.review" ng-change="change()" placeholder="# review" class="form-control input-md">
+                    <input id="color" name="color" type="text" ng-model="entity.color" ng-change="change()" placeholder="blue, red, violet ..." class="form-control input-md">
 
                 </div>
             </div>
 
-            <!-- Textarea -->
+            <!-- Text input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="description">Description</label>
-                <div class="col-md-4">
-                    <textarea class="form-control" id="description" ng-model="entity.description" ng-change="change()" name="description"></textarea>
+                <label class="col-md-4 control-label" for="material">Material</label>
+                <div class="col-md-2">
+                    <input id="material" name="material" type="text" ng-model="entity.material" ng-change="change()" placeholder="leather, poly ..." class="form-control input-md">
+
                 </div>
             </div>
 

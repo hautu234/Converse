@@ -34,10 +34,10 @@ var app = angular.module('administration', ['ngRoute'])
         var createUrl = '/api/' + section + '/create';
         var updateUrl = '/api/' + section + '/update';
 
-        var fetchEntities = function() {
+        var fetchEntities = function(getAllUrl, entityName) {
             $http.get(getAllUrl).then(function(response) {
                 var entities = response.data.MESSAGE;
-                $scope.entities = entities;
+                $scope.entities[entityName] = entities;
             });
         };
 
@@ -66,7 +66,7 @@ var app = angular.module('administration', ['ngRoute'])
         };
 
         $scope.delete = function() {
-            var message = "category has been deleted successfully!";
+            var message = section + " has been deleted successfully!";
             var data = {_id: $scope.entity._id};
             $http.post(deleteUrl, data).then(
                 function(response) {
@@ -75,7 +75,7 @@ var app = angular.module('administration', ['ngRoute'])
                     if(result === "success!") {
                         $scope.result.successMessage = message;
                         $scope.entity = {};
-                        fetchEntities();
+                        fetchEntities(getAllUrl, section);
                     } else {
                         $scope.result.errorMessage = response.data.message;
                     }
@@ -106,7 +106,7 @@ var app = angular.module('administration', ['ngRoute'])
                         $scope.result.successMessage = message;
                         $scope.entity = response.data.MESSAGE;
                         $scope.inputdata.submitButtonName = "Update";
-                        fetchEntities();
+                        fetchEntities(getAllUrl, section);
                     } else {
                         $scope.result.errorMessage = response.data.message;
                     }
@@ -121,7 +121,13 @@ var app = angular.module('administration', ['ngRoute'])
 
         });
 
-        fetchEntities();
+        fetchEntities(getAllUrl, section);
+
+        if(section === 'subcategory') {
+            var parentSection = 'category';
+            var parentAllUrl = '/api/' + parentSection + '/get-all';
+            fetchEntities(parentAllUrl, parentSection);
+        }
 
 
     }]);
