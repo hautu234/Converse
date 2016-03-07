@@ -1,12 +1,12 @@
 "use strict";
 
-var app = angular.module('category', ['ngRoute'])
+var app = angular.module('administration', ['ngRoute'])
 
     .config(function ($routeProvider, $locationProvider, $logProvider) {
         //configure the routing rules here
-        $routeProvider.when('/category', {
-            controller: 'categoryController',
-            templateUrl: 'view/category/category.html'
+        $routeProvider.when('/administration', {
+            controller: 'administrationController',
+            templateUrl: 'view/administration/administration.html'
         });
 
         $logProvider.debugEnabled(true);
@@ -25,16 +25,24 @@ var app = angular.module('category', ['ngRoute'])
         }
     })
 
-    .controller('categoryController', ['$scope','$routeParams', '$location', '$http', function($scope, $routeParams, $location, $http) {
-        var fetchCategories = function() {
-            $http.get('/api/category/get-all').then(function(response) {
-                var categories = response.data.MESSAGE;
-                $scope.categories = categories;
+    .controller('administrationController', ['$scope','$routeParams', '$location', '$http', function($scope, $routeParams, $location, $http) {
+        var section = $location.search().section || "category";
+
+        $scope.section = section;
+
+        var getAllUrl = '/api/' + section + '/get-all';
+        var createUrl = '/api/' + section + '/create';
+        var updateUrl = '/api/' + section + '/update';
+
+        var fetchEntities = function() {
+            $http.get(getAllUrl).then(function(response) {
+                var entities = response.data.MESSAGE;
+                $scope.entities = entities;
             });
         };
 
-        $scope.category = {};
-        $scope.categories = {};
+        $scope.entity = {};
+        $scope.entities = {};
         $scope.result = {};
         $scope.inputdata = {
             submitButtonName : "Create"
@@ -45,30 +53,29 @@ var app = angular.module('category', ['ngRoute'])
             $scope.result.errorMessage = "";
         };
 
-        $scope.edit = function($event, category) {
-            $scope.category = category;
+        $scope.edit = function($event, entity) {
+            $scope.entity = entity;
             $scope.inputdata.submitButtonName = "Update";
         };
 
         $scope.reset = function() {
             $scope.result.successMessage = "";
             $scope.result.errorMessage = "";
-            $scope.category = {};
+            $scope.entity = {};
             $scope.inputdata.submitButtonName = "Create";
         };
 
         $scope.delete = function() {
-            var url = "/api/category/delete";
             var message = "category has been deleted successfully!";
-            var data = {_id: $scope.category._id};
-            $http.post(url, data).then(
+            var data = {_id: $scope.entity._id};
+            $http.post(deleteUrl, data).then(
                 function(response) {
                     var result = response.data.RESULT;
                     console.log(response.data);
                     if(result === "success!") {
                         $scope.result.successMessage = message;
-                        $scope.category = {};
-                        fetchCategories();
+                        $scope.entity = {};
+                        fetchEntities();
                     } else {
                         $scope.result.errorMessage = response.data.message;
                     }
@@ -81,40 +88,25 @@ var app = angular.module('category', ['ngRoute'])
 
         $scope.submit = function() {
             // default url is for creating category
-            var url = "/api/category/create";
-            var message = "category has been created successfully!";
-
+            var message = section + " has been created successfully!";
+            var url = createUrl;
             // init parameter
-            var data = {
-                _id: $scope.category._id,
-                name: $scope.category.name,
-                type: $scope.category.type,
-                description: $scope.category.description,
-
-                imageUri: $scope.category.imageUri,
-                mainCategory: $scope.category.mainCategory,
-                meta: {
-                    averageRating: $scope.category.rating,
-                    numberReviews: $scope.category.review,
-                }
-            };
+            var data = $scope.entity;
 
             // update case
             if(data._id) {
-                url = "/api/category/update";
-                message = "category has been updated successfully!";
+                url = updateUrl;
+                message = section + " has been updated successfully!";
             }
 
-            console.log("calling " + url + " with " + data);
             $http.post(url, data).then(
                 function(response) {
                     var result = response.data.RESULT;
-                    console.log(response.data);
                     if(result === "success!") {
                         $scope.result.successMessage = message;
-                        $scope.category = response.data.MESSAGE;
+                        $scope.entity = response.data.MESSAGE;
                         $scope.inputdata.submitButtonName = "Update";
-                        fetchCategories();
+                        fetchEntities();
                     } else {
                         $scope.result.errorMessage = response.data.message;
                     }
@@ -129,7 +121,7 @@ var app = angular.module('category', ['ngRoute'])
 
         });
 
-        fetchCategories();
+        fetchEntities();
 
 
     }]);

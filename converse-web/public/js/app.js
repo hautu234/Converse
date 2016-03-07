@@ -2,19 +2,23 @@
 
 // Declare app level module which depends on views, and components
 angular.module('converseBMT', [
-	'ngRoute',
-	'listing',
-	'shoes',
-    'index',
-    'home',
-    'header',
-    'admin',
-    'login',
-    'category'
-]).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+        'ngRoute',
+        'listing',
+        'shoes',
+        'index',
+        'home',
+        'header',
+        'admin',
+        'login',
+        'administration'
+])
+
+.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider.otherwise({redirectTo: '/home'});
     $locationProvider.html5Mode(true);
-}]).directive('myAdSense', function() {
+}])
+
+.directive('myAdSense', function () {
     return {
         restrict: 'A',
         transclude: true,
@@ -27,8 +31,16 @@ angular.module('converseBMT', [
             window.adsbygoogle.push({});
         }
     }
-}).controller('mainController', ['$window','$rootScope','$location', function($window,$rootScope,$location) {
-    if($window.sessionStorage.loggedUser) {
+})
+
+.filter('capitalize', function() {
+    return function(input) {
+        return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
+    }
+})
+
+.controller('mainController', ['$window', '$rootScope', '$location', function ($window, $rootScope, $location) {
+    if ($window.sessionStorage.loggedUser) {
         $rootScope.loggedUser = $window.sessionStorage.loggedUser;
         console.log($location.path);
 
@@ -36,3 +48,4 @@ angular.module('converseBMT', [
 
     $rootScope.css = "";
 }]);
+

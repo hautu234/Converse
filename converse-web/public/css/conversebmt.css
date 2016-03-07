@@ -12,7 +12,6 @@
     padding-bottom: 15px;
 }
 
-
 .username {
     color: #00aced;
     padding-top: 15px;
@@ -21,4 +20,8 @@
 
 .table td {
     text-align: center;
+}
+
+.top-buffer {
+    margin-top: 20px;
 }
