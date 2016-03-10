@@ -3,58 +3,58 @@ var _ = require('underscore'),
     router = express.Router();
 
 /**
- * Create user with parameter
- * Param: req, res, user and callback function
+ * Create entity with parameter
+ * Param: req, res, entity and callback function
  */
-exports.create = function(req, res, user, cb, Entity) {
-    var persistingUser = new Entity(user);
-    persistingUser.save(function(err) {
-        cb(req, res, persistingUser, err);
+exports.create = function(req, res, entity, cb, Entity) {
+    var persistingEntity = new Entity(entity);
+    persistingEntity.save(function(err) {
+        cb(req, res, persistingEntity, err);
     });
 };
 
 /**
- * Find users with parameter
+ * Find entities with parameter
  * Param: req, res, searchOptions and callback function
  */
 exports.find = function(req, res, searchOptions, cb, Entity) {
     var promise = Entity.find(searchOptions).exec();
 
-    promise.then(function(users){
-        console.log("find "+  JSON.stringify(searchOptions) + users);
-        cb(req, res, users);
+    promise.then(function(entities){
+        console.log("find "+  JSON.stringify(searchOptions) + entities);
+        cb(req, res, entities);
     });
 };
 
 /**
- * Update user with parameter
- * Param: req, res, id, updatingUser and callback function
+ * Update entity with parameter
+ * Param: req, res, id, updatingEntity and callback function
  */
-exports.update = function(req, res, id, updatingUser, cb, Entity) {
-    Entity.findById(id, function(err, user) {
-        if (!user)
+exports.update = function(req, res, id, updatingEntity, cb, Entity) {
+    Entity.findById(id, function(err, entity) {
+        if (!entity)
             return res.json({"message" : "could not find document with id " + id});
         else {
-            console.log("updating " + JSON.stringify(updatingUser) + " to " + JSON.stringify(user));
-            user = _.extend(user, updatingUser);
-            user.save(function(err) {
-                cb(req, res, user, err);
+            console.log("updating " + JSON.stringify(updatingEntity) + " to " + JSON.stringify(entity));
+            entity = _.extend(entity, updatingEntity);
+            entity.save(function(err) {
+                cb(req, res, entity, err);
             });
         }
     });
 };
 
 /**
- * Delete user by id as parameter
+ * Delete entity by id as parameter
  * Param: req, res, id and callback function
  */
 exports.delete = function(req, res, id, cb, Entity) {
-    Entity.findById(id, function(err, user) {
-        if (!user)
+    Entity.findById(id, function(err, entity) {
+        if (!entity)
             return res.json({"message" : "could not find document with id " + id});
         else {
-            user.remove(function(err) {
-                cb(req, res, user, err);
+            entity.remove(function(err) {
+                cb(req, res, entity, err);
             });
         }
     });
