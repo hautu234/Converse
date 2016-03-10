@@ -4,7 +4,7 @@ var _ = require('underscore'),
     express = require('express'),
     router = express.Router(),
     User = require('../entity/user'),
-    userService = require('../service/user-service');
+    entityService = require('../service/entity-service');
 
 // define constant
 var RESULT = "result",
@@ -76,7 +76,7 @@ var deleteUser = function(req, res, user , err) {
  */
 router.post('/create', function(req, res) {
     var user = req.body;
-    userService.create(req, res, user, createUser);
+    entityService.create(req, res, user, createUser, User);
 });
 
 /**
@@ -86,7 +86,7 @@ router.post('/create', function(req, res) {
 router.get('/get/:uri', function(req,res) {
     var searchOptions = {uri: req.params.uri};
 
-    userService.find(req, res, searchOptions, getUsers);
+    entityService.find(req, res, searchOptions, getUsers, User);
 });
 
 
@@ -97,7 +97,7 @@ router.get('/get/:uri', function(req,res) {
 router.get('/get-all', function(req,res) {
     var searchOptions = {};
 
-    userService.find(req, res, searchOptions, getUsers);
+    entityService.find(req, res, searchOptions, getUsers, User);
 });
 
 /**
@@ -106,7 +106,7 @@ router.get('/get-all', function(req,res) {
  */
 router.get('/find', function(req,res) {
     var searchOption = req.body;
-    userService.find(req, res, searchOptions, getUsers);
+    entityService.find(req, res, searchOptions, getUsers, User);
 });
 
 /**
@@ -119,7 +119,7 @@ router.post('/update', function(req,res) {
         var id = updatingUser._id;
         delete updatingUser._id; // clear _id field
         delete updatingUser.username; // clear username field
-        userService.update(req, res, id, updatingUser, updateUser);
+        entityService.update(req, res, id, updatingUser, updateUser, User);
     } else {
         res.json({MESSAGE : "invalid parameters!"});
     }
@@ -133,7 +133,7 @@ router.post('/delete', function(req,res) {
     var searchOption = req.body;
     if(searchOption && searchOption._id) {
         var id = searchOption._id;
-        userService.delete(res, res, id, deleteUser);
+        entityService.delete(res, res, id, deleteUser, User);
     } else {
         res.json({MESSAGE : "invalid parameters!"});
     }

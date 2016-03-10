@@ -4,7 +4,7 @@ var _ = require('underscore'),
     express = require('express'),
     router = express.Router(),
     Category = require('../entity/category'),
-    categoryService = require('../service/category-service');
+    entityService = require('../service/entity-service');
 
 // define constant
 var RESULT = "result",
@@ -76,7 +76,7 @@ var deleteCategory = function(req, res, category , err) {
  */
 router.post('/create', function(req, res) {
     var category = req.body;
-    categoryService.create(req, res, category, createCategory);
+    entityService.create(req, res, category, createCategory, Category);
 });
 
 /**
@@ -86,7 +86,7 @@ router.post('/create', function(req, res) {
 router.get('/get/:uri', function(req,res) {
     var searchOptions = {uri: req.params.uri};
 
-    categoryService.find(req, res, searchOptions, getCategories);
+    entityService.find(req, res, searchOptions, getCategories, Category);
 });
 
 
@@ -97,7 +97,7 @@ router.get('/get/:uri', function(req,res) {
 router.get('/get-all', function(req,res) {
     var searchOptions = {};
 
-    categoryService.find(req, res, searchOptions, getCategories);
+    entityService.find(req, res, searchOptions, getCategories, Category);
 });
 
 /**
@@ -106,7 +106,7 @@ router.get('/get-all', function(req,res) {
  */
 router.get('/find', function(req,res) {
     var searchOption = req.body;
-    categoryService.find(req, res, searchOptions, getCategories);
+    entityService.find(req, res, searchOptions, getCategories, Category);
 });
 
 /**
@@ -118,7 +118,7 @@ router.post('/update', function(req,res) {
     if(updatingCategory && updatingCategory._id) {
         var id = updatingCategory._id;
         delete updatingCategory._id; // clear _id field
-        categoryService.update(req, res, id, updatingCategory, updateCategory);
+        entityService.update(req, res, id, updatingCategory, updateCategory, Category);
     } else {
         res.json({MESSAGE : "invalid parameters!"});
     }
@@ -132,7 +132,7 @@ router.post('/delete', function(req,res) {
     var searchOption = req.body;
     if(searchOption && searchOption._id) {
         var id = searchOption._id;
-        categoryService.delete(res, res, id, deleteCategory);
+        entityService.delete(res, res, id, deleteCategory, Category);
     } else {
         res.json({MESSAGE : "invalid parameters!"});
     }
