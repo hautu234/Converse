@@ -1,7 +1,8 @@
-var express = require('express')
-    , router = express.Router()
-    , userService = require('../service/user-service')
-    , md5 = require('js-md5');
+var express = require('express'),
+    router = express.Router(),
+    User = require('../entity/user'),
+    entityService = require('../service/entity-service'),
+    md5 = require('js-md5');
 
 var authenticate = function(req, res, users) {
     if (users.length > 0) {
@@ -28,7 +29,7 @@ var authenticate = function(req, res, users) {
 router.post('/', function(req, res){
     var origin = req.query.origin || "/index";
     var searchOptions = {'username': req.body.username, 'password': md5(req.body.password)};
-    userService.find(req, res, searchOptions, authenticate);
+    entityService.find(req, res, searchOptions, authenticate, User);
 });
 
 module.exports = router;
