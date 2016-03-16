@@ -34,5 +34,16 @@
 .social-bar {
     position: fixed !important;
     z-index: 9999;
-    margin-right: 0px;
+    margin-right: 20px;
+    margin-top: 50px;
+    right:0px;
+    width: 75px;
+}
+
+.social-fb-bar {
+
+}
+
+.social-goo-bar {
+
 }
