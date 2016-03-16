@@ -1,22 +1,33 @@
-<!-- Navigation -->
 <div ng-include="'partials/header.html'"></div>
 
+<div class="container-fluid">
 
-<!-- Page Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12 ">
-            <div ng-include="'partials/carousel.html'"></div>
-            <div ng-include="'partials/shoescontainer.html'"></div>
+    <div class="container-fluid">
+        <div ng-include="'partials/social/fb-share.html'"></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 ">
+                    <div ng-include="'partials/carousel.html'"></div>
+                </div>
+
+            </div>
         </div>
+    </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 ">
+                <div ng-include="'partials/shoescontainer.html'"></div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <div ng-include="'partials/footer.html'"></div>
     </div>
 
 </div>
 
-<!-- /.container -->
-<div class="container">
-    <hr>
-    <div ng-include="'partials/footer.html'"></div>
-</div>
-<!-- /.container -->
