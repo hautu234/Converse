@@ -21,7 +21,6 @@ exports.find = function(req, res, searchOptions, cb, Entity) {
     var promise = Entity.find(searchOptions).exec();
 
     promise.then(function(entities){
-        console.log("find "+  JSON.stringify(searchOptions) + entities);
         cb(req, res, entities);
     });
 };
@@ -35,7 +34,6 @@ exports.update = function(req, res, id, updatingEntity, cb, Entity) {
         if (!entity)
             return res.json({"message" : "could not find document with id " + id});
         else {
-            console.log("updating " + JSON.stringify(updatingEntity) + " to " + JSON.stringify(entity));
             entity = _.extend(entity, updatingEntity);
             entity.save(function(err) {
                 cb(req, res, entity, err);

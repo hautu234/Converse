@@ -6,7 +6,7 @@ var categorySchema = new Schema({
     name: {type: String, required: true, unique: true, index:true },
     type: String,
     description: String,
-
+    order: Number,
     imageUri: String,
     mainCategory: Boolean,
     meta: {

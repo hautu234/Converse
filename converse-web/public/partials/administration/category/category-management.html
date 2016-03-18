@@ -51,7 +51,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="rating">Average Rating</label>
                 <div class="col-md-2">
-                    <input id="rating" name="rating" type="text" ng-model="entity.rating" ng-change="change()" placeholder="4 or 5*" class="form-control input-md">
+                    <input id="rating" name="rating" type="text" ng-model="entity.meta.averageRating" ng-change="change()" placeholder="4 or 5*" class="form-control input-md">
 
                 </div>
             </div>
@@ -60,7 +60,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="review"></label>
                 <div class="col-md-2">
-                    <input id="review" name="review" type="text" ng-model="entity.review" ng-change="change()" placeholder="# review" class="form-control input-md">
+                    <input id="review" name="review" type="text" ng-model="entity.meta.numberReviews" ng-change="change()" placeholder="# review" class="form-control input-md">
 
                 </div>
             </div>
