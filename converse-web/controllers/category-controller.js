@@ -16,14 +16,12 @@ var RESULT = "result",
 
 var createCategory = function(req, res, category , err) {
     if(err) {
-        console.log(err);
         var message = "Something when wrong with registering this category " + category;
         if(err.code && err.code === 11000) {
             message = "The category you're registering already existed!";
         }
         res.json({RESULT:FAILED,MESSAGE:message});
     } else {
-        console.log("category has been saved successfully");
         res.json({RESULT:SUCCESS,MESSAGE:category});
     }
 };
@@ -34,7 +32,6 @@ var getCategories = function(req, res, categories, err) {
     var message = "no categories found!";
 
     if (err) {
-        console.log(err);
         message = "something wrong !";
         result = FAILED;
     }
@@ -50,22 +47,18 @@ var getCategories = function(req, res, categories, err) {
 
 var updateCategory = function(req, res, category , err) {
     if(err) {
-        console.log(err);
         var message = "Something when wrong with updating this category " + category;
         res.json({RESULT:FAILED,MESSAGE:message});
     } else {
-        console.log("category has been updated successfully");
         res.json({RESULT:SUCCESS,MESSAGE:category});
     }
 };
 
 var deleteCategory = function(req, res, category , err) {
     if(err) {
-        console.log(err);
         var message = "Something when wrong with deleting this category " + category;
         res.json({RESULT:FAILED,MESSAGE:message});
     } else {
-        console.log("category has been deleted successfully");
         res.json({RESULT:SUCCESS,MESSAGE:category});
     }
 };
