@@ -8,11 +8,12 @@
                 <th>#</th>
                 <th>Subcategory Name</th>
                 <th>Subcategory Type</th>
+                <th>Category</th>
                 <th>Image</th>
                 <th>Main Subcategory</th>
-                <th>Rating</th>
-                <th>Review</th>
-                <th>Description</th>
+                <th>Price</th>
+                <th>Color</th>
+                <th>Order</th>
             </tr>
             </thead>
             <tbody>
@@ -20,11 +21,12 @@
                 <td>{{entity._id}}</td>
                 <td>{{entity.name}}</td>
                 <td>{{entity.type}}</td>
+                <td>{{entity.parentCategory}}</td>
                 <td><img ng-src="{{entity.imageUri}}" class="img-rounded" width="152" height="118" ng-if="entity.imageUri"></td>
-                <td>{{entity.mainSubcategory}}</td>
-                <td>{{entity.meta.averageRating}}</td>
-                <td>{{entity.meta.numberReviews}}</td>
-                <td>{{entity.description}}</td>
+                <td>{{entity.mainCategory}}</td>
+                <td>{{entity.price}}</td>
+                <td>{{entity.color}}</td>
+                <td>{{entity.order}}</td>
             </tr>
             </tbody>
         </table>

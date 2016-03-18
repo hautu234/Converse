@@ -36,7 +36,7 @@ var getCategories = function(req, res, categories, err) {
         result = FAILED;
     }
 
-    if(!categories || categories.length == 0) {
+    if(!categories || categories.length === 0) {
         message = "no categories found!";
     } else {
         message = categories;
