@@ -7,7 +7,7 @@
 
             <input type="hidden" id="id" ng-model="entity.id" value="{{entity._id}}" />
 
-            <!-- Text input-->
+            
             <div class="form-group">
                 <label class="col-md-4 control-label" for="entity_name">Category Name</label>
                 <div class="col-md-5">
@@ -16,7 +16,7 @@
                 </div>
             </div>
 
-            <!-- Text input-->
+            
             <div class="form-group">
                 <label class="col-md-4 control-label" for="entity_type">Category Type</label>
                 <div class="col-md-5">
@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            <!-- Text input-->
+            
             <div class="form-group">
                 <label class="col-md-4 control-label" for="image_uri">Image URI</label>
                 <div class="col-md-5">
@@ -47,7 +47,7 @@
                 </div>
             </div>
 
-            <!-- Text input-->
+            
             <div class="form-group">
                 <label class="col-md-4 control-label" for="rating">Average Rating</label>
                 <div class="col-md-2">
@@ -56,7 +56,7 @@
                 </div>
             </div>
 
-            <!-- Text input-->
+            
             <div class="form-group">
                 <label class="col-md-4 control-label" for="review"></label>
                 <div class="col-md-2">
@@ -70,6 +70,14 @@
                 <label class="col-md-4 control-label" for="description">Description</label>
                 <div class="col-md-4">
                     <textarea class="form-control" id="description" ng-model="entity.description" ng-change="change()" name="description"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="order"></label>
+                <div class="col-md-2">
+                    <input id="review" name="review" type="text" ng-model="entity.order" ng-change="change()" placeholder="order" class="form-control input-md">
+
                 </div>
             </div>
 

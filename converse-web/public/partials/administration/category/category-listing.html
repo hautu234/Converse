@@ -13,10 +13,11 @@
                 <th>Rating</th>
                 <th>Review</th>
                 <th>Description</th>
+                <th>Order</th>
             </tr>
             </thead>
             <tbody>
-            <tr ng-click="edit($event,entity)" ng-repeat="entity in entities.category">
+            <tr ng-click="edit($event,entity)" ng-repeat="entity in entities.category | orderBy : 'order'">
                 <td>{{entity._id}}</td>
                 <td>{{entity.name}}</td>
                 <td>{{entity.type}}</td>
@@ -25,6 +26,7 @@
                 <td>{{entity.meta.averageRating}}</td>
                 <td>{{entity.meta.numberReviews}}</td>
                 <td>{{entity.description}}</td>
+                <td>{{entity.order}}</td>
             </tr>
             </tbody>
         </table>
