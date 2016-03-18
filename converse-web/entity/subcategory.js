@@ -4,6 +4,7 @@ var mongoose = require('mongoose'),
 // create a schema
 var subcategorySchema = new Schema({
     name: {type: String, required: true, unique: true, index:true },
+    type: String,
     imageUri: String,
     mainCategory: Boolean,
     parentCategory: {
@@ -13,6 +14,7 @@ var subcategorySchema = new Schema({
     price: Number,
     color: String,
     material: String,
+    order: Number,
     created_at: Date,
     updated_at: Date
 });

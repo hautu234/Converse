@@ -10,40 +10,15 @@ var app = angular.module('shoes', ['ngRoute'])
         $logProvider.debugEnabled(true);
     })
 
-    .directive('onFinishRender', function ($timeout) {
+    .directive('onFinishRender', function () {
+
         return {
             restrict: 'A',
             link: function (scope, element, attr) {
                 if (scope.$last === true) {
-
                 }
             }
         }
-    })
-
-    .directive('dynFbCommentBox', function () {
-        function createHTML(href, numposts, colorscheme) {
-            return '<div class="fb-comments" ' +
-                           'data-href="' + href + '" ' +
-                           'data-numposts="' + numposts + '" ' +
-                           'data-colorsheme="' + colorscheme + '">' +
-                   '</div>';
-        }
-
-        return {
-            restrict: 'A',
-            scope: {},
-            link: function postLink(scope, elem, attrs) {
-                attrs.$observe('pageHref', function (newValue) {
-                    var href        = newValue;
-                    var numposts    = attrs.numposts    || 5;
-                    var colorscheme = attrs.colorscheme || 'light';
-
-                    elem.html(createHTML(href, numposts, colorscheme));
-                    // FB.XFBML.parse(elem[0]);
-                });
-            }
-        };
     })
 
     .controller('shoesController', ['$scope','$routeParams', '$location', '$http', function($scope, $routeParams, $location, $http) {
@@ -67,7 +42,11 @@ var app = angular.module('shoes', ['ngRoute'])
             });
         }
 
+        $scope.pluginOn = false;
+
         $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+            $scope.pluginOn = true;
+
             var jssor_1_SlideshowTransitions = [
                 {$Duration:1200,x:0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
                 {$Duration:1200,x:-0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},

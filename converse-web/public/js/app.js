@@ -10,10 +10,17 @@ angular.module('converseBMT', [
         'header',
         'admin',
         'login',
-        'administration'
+        'administration',
+        'contact',
+        'ezfb'
 ])
 
-.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+.config(['$routeProvider', '$locationProvider','ezfbProvider', function ($routeProvider, $locationProvider, ezfbProvider) {
+    ezfbProvider.setInitParams({
+        appId: '932685206783368',
+        version: 'v2.3'
+    });
+
     $routeProvider.otherwise({redirectTo: '/home'});
     $locationProvider.html5Mode(true);
 }])
@@ -39,7 +46,7 @@ angular.module('converseBMT', [
     }
 })
 
-.controller('mainController', ['$window', '$rootScope', '$location', function ($window, $rootScope, $location) {
+.controller('mainController', ['$window', '$scope', '$rootScope', '$location', function ($window, $scope, $rootScope, $location) {
     if ($window.sessionStorage.loggedUser) {
         $rootScope.loggedUser = $window.sessionStorage.loggedUser;
         console.log($location.path);

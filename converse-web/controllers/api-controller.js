@@ -8,5 +8,7 @@ router.get('/', function(req, res){
 router.use('/auth', require('./authentication-controller'));
 router.use('/user', require('./user-controller'));
 router.use('/category', require('./category-controller'));
+router.use('/subcategory', require('./subcategory-controller'));
+
 
 module.exports = router;
