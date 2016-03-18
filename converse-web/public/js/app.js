@@ -11,6 +11,7 @@ angular.module('converseBMT', [
         'admin',
         'login',
         'administration',
+        'contact',
         'ezfb'
 ])
 
