@@ -8,7 +8,7 @@
                 <th>#</th>
                 <th>Subcategory Name</th>
                 <th>Subcategory Type</th>
-                <th>Category</th>
+                <th>P.Category</th>
                 <th>Image</th>
                 <th>Carousel Images</th>
                 <th>Main Subcategory</th>
@@ -22,7 +22,7 @@
                 <td>{{entity._id}}</td>
                 <td>{{entity.name}}</td>
                 <td>{{entity.type}}</td>
-                <td>{{entity.parentCategory}}</td>
+                <td>{{parentEntities[entity.parentCategory].name}}</td>
                 <td><img ng-src="{{entity.imageUri}}" class="img-rounded" width="152" height="118" ng-if="entity.imageUri"></td>
                 <td>
                     <div ng-repeat="image in entity.carouselImages">

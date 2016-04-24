@@ -34,14 +34,16 @@ var app = angular.module('administration', ['ngRoute'])
         var createUrl = '/api/' + section + '/create';
         var updateUrl = '/api/' + section + '/update';
 
-        var fetchEntities = function(getAllUrl, entityName) {
+        var fetchEntities = function(getAllUrl, entityName, cb) {
             $http.get(getAllUrl).then(function(response) {
                 var entities = response.data.MESSAGE;
                 $scope.entities[entityName] = entities;
+                cb(entities);
             });
         };
 
         $scope.entity = {};
+        $scope.parentEntities = {};
         $scope.entities = {};
         $scope.result = {};
         $scope.inputdata = {
@@ -130,7 +132,14 @@ var app = angular.module('administration', ['ngRoute'])
         if(section === 'subcategory') {
             var parentSection = 'category';
             var parentAllUrl = '/api/' + parentSection + '/get-all';
-            fetchEntities(parentAllUrl, parentSection);
+            var initParentEntity = function(entities) {
+                for(var i = 0; i < entities.length; i++) {
+                    var entity = entities[i];
+                    $scope.parentEntities[entity._id] = entity;
+                }
+            };
+
+            fetchEntities(parentAllUrl, parentSection, initParentEntity);
         }
 
 
