@@ -18,9 +18,10 @@ exports.create = function(req, res, entity, cb, Entity) {
  * Param: req, res, searchOptions and callback function
  */
 exports.find = function(req, res, searchOptions, cb, Entity) {
-    var promise = Entity.find(searchOptions).exec();
+    Entity.find(searchOptions, function(err, entities) {
+        if (err) throw err;
 
-    promise.then(function(entities){
+        // object of all the entities
         cb(req, res, entities);
     });
 };

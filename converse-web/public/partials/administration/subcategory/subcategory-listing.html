@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <h3>{{section | capitalize}} Listing</h3>
 
     <div class="table-responsive">
@@ -10,6 +10,7 @@
                 <th>Subcategory Type</th>
                 <th>Category</th>
                 <th>Image</th>
+                <th>Carousel Images</th>
                 <th>Main Subcategory</th>
                 <th>Price</th>
                 <th>Color</th>
@@ -23,6 +24,11 @@
                 <td>{{entity.type}}</td>
                 <td>{{entity.parentCategory}}</td>
                 <td><img ng-src="{{entity.imageUri}}" class="img-rounded" width="152" height="118" ng-if="entity.imageUri"></td>
+                <td>
+                    <div ng-repeat="image in entity.carouselImages">
+                        <img ng-src="{{image}}" class="img-rounded" width="76" height="58" ng-if="image">
+                    </div>
+                </td>
                 <td>{{entity.mainCategory}}</td>
                 <td>{{entity.price}}</td>
                 <td>{{entity.color}}</td>

@@ -26,8 +26,8 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="category">Category</label>
                 <div class="col-md-4">
-                    <select id="category" name="category" class="form-control">
-                        <option ng-repeat="category in entities.category" value="category._id">{{category.name}}</option>
+                    <select id="category" name="category" class="form-control" ng-model="entity.parentCategory">
+                        <option ng-repeat="category in entities.category"  value="{{category._id}}">{{category.name}}</option>
                     </select>
                 </div>
             </div>
@@ -38,6 +38,13 @@
                 <div class="col-md-5">
                     <input id="image_uri" name="image_uri" type="text" ng-model="entity.imageUri" ng-change="change()" placeholder="Enter image uri here" class="form-control input-md">
 
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="image_uri">Carousel Image URI</label>
+                <div class="col-md-5">
+                    <textarea id="image_uri" name="image_uri" type="textarea" ng-model="entity.carouselImages" ng-list ng-change="change()" placeholder="Enter image uris here" class="form-control input-md"></textarea>
                 </div>
             </div>
 

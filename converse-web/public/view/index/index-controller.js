@@ -24,5 +24,22 @@ var app = angular.module('index', ['ngRoute'])
     })
 
     .controller('indexController', ['$timeout','$scope','$routeParams', '$location', '$http', function($timeout, $scope, $routeParams, $location, $http) {
+        var section = $location.search().section || "category";
+        $scope.section = section;
 
-    }])
+        var getAllUrl = '/api/' + section + '/get-all';
+        var createUrl = '/api/' + section + '/create';
+        var updateUrl = '/api/' + section + '/update';
+
+        var fetchEntities = function(getAllUrl, entityName) {
+            $http.get(getAllUrl).then(function(response) {
+                var entities = response.data.MESSAGE;
+                $scope.entities[entityName] = entities;
+            });
+        };
+
+        $scope.entity = {};
+        $scope.entities = {};
+
+        fetchEntities(getAllUrl, section);
+    }]);

@@ -121,6 +121,10 @@ var app = angular.module('administration', ['ngRoute'])
 
         });
 
+        $scope.addCarouselImage = function() {
+
+        };
+
         fetchEntities(getAllUrl, section);
 
         if(section === 'subcategory') {

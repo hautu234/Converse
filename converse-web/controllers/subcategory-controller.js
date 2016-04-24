@@ -98,7 +98,10 @@ router.get('/get-all', function(req,res) {
  * Param: req.body
  */
 router.get('/find', function(req,res) {
-    var searchOption = req.body;
+    var searchOptions = {};
+    if(req.query.category) {
+        searchOptions = {"parentCategory": req.query.category};
+    }
     entityService.find(req, res, searchOptions, getCategories, Category);
 });
 

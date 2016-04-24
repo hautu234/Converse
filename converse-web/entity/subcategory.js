@@ -6,6 +6,7 @@ var subcategorySchema = new Schema({
     name: {type: String, required: true, unique: true, index:true },
     type: String,
     imageUri: String,
+    carouselImages: [],
     mainCategory: Boolean,
     parentCategory: {
         type: mongoose.Schema.Types.ObjectId,
