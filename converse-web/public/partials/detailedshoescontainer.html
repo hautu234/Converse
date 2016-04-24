@@ -8,13 +8,11 @@
             </h1>
         </div>
     </div>
-    <!-- /.row -->
 
-    <!-- Projects Row -->
     <div class="row" ng-repeat="displayShoe in displayShoes">
         <div class="col-md-3 portfolio-item" ng-repeat="shoe in displayShoe">
-            <a href="/shoes?brand={{type}}&shoesId={{shoe.id}}">
-                <img class="img-responsive" ng-src="{{shoe.imageUrl}}" alt="">
+            <a href="/shoes?&shoesId={{shoe._id}}">
+                <img class="img-responsive" ng-src="{{shoe.imageUri}}" alt="">
                 <h3>
                     {{shoe.name}}
                 </h3>

@@ -23,21 +23,18 @@ var app = angular.module('shoes', ['ngRoute'])
 
     .controller('shoesController', ['$scope','$routeParams', '$location', '$http', function($scope, $routeParams, $location, $http) {
         var shoesId = $location.search().shoesId;
-        var brand = $location.search().brand;
 
-        if(brand && shoesId) {
-            $scope.brand = brand;
+        var section = $location.search().section || "subcategory";
+        $scope.section = section;
+        var findUrl = '/api/' + section + '/find';
+
+        if(shoesId) {
             $scope.shoesId = shoesId;
-            $http.get('/data/' + brand + '.json').then(function(response) {
-                shoes = response.data.items;
-                $scope.type = response.data.type;
-
-                for(i = 0; i < shoes.length; i++) {
-                    if(shoes[i] && shoes[i].id === shoesId && shoes[i].carouselImages)
-                    {
-                        $scope.carouselImages = shoes[i].carouselImages;
-                        break;
-                    }
+            $http.get(findUrl + '?_id=' + shoesId).then(function(response) {
+                shoes = response.data.MESSAGE;
+                if(shoes && shoes.length > 0) {
+                    $scope.carouselImages = shoes[0].carouselImages;
+                    console.log($scope.carouselImages);
                 }
             });
         }

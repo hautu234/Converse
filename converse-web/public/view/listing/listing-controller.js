@@ -13,14 +13,17 @@ var app = angular.module('listing', ['ngRoute'])
 
 
     .controller('listingController', ['$scope','$routeParams', '$location', '$http', function($scope, $routeParams, $location, $http) {
-        var shoes = [
+        var section = $location.search().section || "subcategory";
 
-        ];
+        $scope.section = section;
 
-        var brand = $location.search().brand;
+        var findUrl = '/api/' + section + '/find';
+        var shoes = [];
+
+        var brand = $location.search().pcategory;
         if(brand) {
-            $http.get('/data/' + brand + '.json').then(function(response) {
-                shoes = response.data.items;
+            $http.get(findUrl + '?category=' + brand).then(function(response) {
+                shoes = response.data.MESSAGE;
                 $scope.type = response.data.type;
                 $scope.name = response.data.name;
 
